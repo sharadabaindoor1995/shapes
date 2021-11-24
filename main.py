@@ -19,11 +19,19 @@ class Circle:
     def __len__(self):
         return int(2*pi*self.radius)
 
+    def __str__(self):
+        return f"Instance of {self.__class__.__qualname__}"
+
+    def __repr__(self):
+        return f"Circle({self._radius},fill={self._fill})"
+
 def main():
     circle=Circle(5.0, fill='blue', stroke='white')
     print(f"area = {circle.calculate_area()}")
     print(circle.radius)
     print(f"circumference is {len(circle)}")
+    print(str(circle))
+    print(repr(circle))
     return 0
 
 if __name__ == "__main__":
